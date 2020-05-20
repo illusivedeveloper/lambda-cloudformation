@@ -1,16 +1,23 @@
-class UserInput:
-    def __init__(self, state, province):
+import boto3
+
+
+class Cloudformation:
+    def __init__(self):
         pass
 
-class Cloudformation(UserInput):
-    def __init__(self):
-        super().__init__()
+    def usrinput(self):
+        self.state = input("Enter state: ")
+        self.province = input("Enter province: ")
+        print(self.state)
+        print(self.province)
 
     def create_lambda_Stack(self):
         pass
 
     def deploy_lambda_Stack(self):
-        pass
+        client = boto3.client('cloudformation')
+
 
 if __name__ == "__main__":
-    pass
+    cfmn = Cloudformation()
+    cfmn.usrinput()

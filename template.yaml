@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Unixtime Lambda function with cfn-export-response.
+Resources:
+  primer:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: Python 3.6
+      Role: arn:aws:iam::018867302758:role/service-role/unixtime-role-3n2ibe9a
+      Handler: handler
+      Code:
+        ZipFile: |
+          import urllib.request as request
+          
+          def handler():
+            state = ""
+      Description: Invoke a function during stack creation.
+      TracingConfig:
+        Mode: Active
